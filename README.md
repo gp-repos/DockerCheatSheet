@@ -2,21 +2,22 @@
 
 # Содержание
 
-   * [Установка](#installation)
+   * [Установка](#установка)
    * [Docker Registries &amp; Repositories](#docker-registries--repositories)
    
 # Установка
 
 ## Linux
 
+Скачиваем дистрибутив и запускаем установку:
 ```
 sudo curl -sSL get.docker.com | sh
 ```
-Добавляем себя в группу **docker**
+Добавляем себя (username) в группу **docker**:
 ```
 sudo adduser username docker
 ```
-Перезагружаемся. Запскаем контейнер “hello-world”
+Перезагружаемся. Запускаем контейнер “hello-world”:
 ```
 docker run hello-world
 ```
