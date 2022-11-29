@@ -35,16 +35,22 @@ https://download.docker.com/win/stable/InstallDocker.msi
 ```
 Подробнее про установку можно посомтреть по ссылкам [Mac](https://docs.docker.com/docker-for-mac/install/) или [Windows](https://docs.docker.com/docker-for-windows/install/)
 
-# Docker Registries & Repositories
-
-## Login to a Registry
+# DOCKER RUN
 
 ```
-docker login
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
-
 ```
-docker login localhost:8080
+[OPTIONS]
+-it — интерактивный режим. Перейти в контейнер и запустить внутри контейнера команду
+-d — запустить контейнер в фоне (демоном) и вывести его ID
+-p port_localhost:port_docker_image — порты из докера на локалхост
+-e «TZ=Europe/Moscow» — указываем нашему контейнеру timezone
+-h HOSTNAME — присвоить имя хоста контейнеру
+— link <имя контейнера> — связать контейнеры с другим
+-v /local/path:/container/path/ — прокидываем в контейнер докера директорию с локальной машины
+--name CONTAINERNAME — присвоить имя нашему контейнеру
+--restart=[no/on-failure/always/unless-stopped] — варианты перезапуска контейнера при крэше
 ```
 
 ## Logout from a Registry.
