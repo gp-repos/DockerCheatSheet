@@ -1,42 +1,38 @@
-# The Ultimate Docker Cheat Sheet
+# Шпаргалка по Docker
 
-# Table of Contents
+# Содержание
 
-   * [Installation](#installation)
+   * [Установка](#installation)
    * [Docker Registries &amp; Repositories](#docker-registries--repositories)
    
-# Installation
+# Установка
 
 ## Linux
 
-For more information, see [here](https://docs.docker.com/install/#server)
-
 ```
-curl -sSL https://get.docker.com/ | sh
+sudo curl -sSL get.docker.com | sh
+```
+Добавляем себя в группу **docker**
+```
+sudo adduser username docker
+```
+Перезагружаемся. Запскаем контейнер “hello-world”
+```
+docker run hello-world
 ```
 
-## Mac
+## Mac или Windows
 
-For more information, see [here](https://docs.docker.com/docker-for-mac/install/)
-
-Use this link to download the dmg.
-
+Скачиваем Docker Desktop по ссылке
+**Mac:**
 ```
 https://download.docker.com/mac/stable/Docker.dmg
 ```
-Open the downloaded file and follow the installation instructions.
-
-##  Windows
-
-For more information, see [here](https://docs.docker.com/docker-for-windows/install/)
-
-Use the msi installer:
-
+**Windows:**
 ```
 https://download.docker.com/win/stable/InstallDocker.msi
 ```
-Open the downloaded file and follow the installation instructions.
-
+Подробнее про установку можно посомтреть по ссылкам [Mac](https://docs.docker.com/docker-for-mac/install/) или [Windows](https://docs.docker.com/docker-for-windows/install/)
 
 # Docker Registries & Repositories
 
