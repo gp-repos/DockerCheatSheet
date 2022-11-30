@@ -34,7 +34,7 @@ docker run hello-world
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
 
-## [OPTIONS]
+## OPTIONS:
     -it, -i -t                      Интерактивный терминал. Перейти в контейнер и выполнить
                                     внутри команду. Команда указывается после названия IMAGE, 
                                     например, SH - запускает shell внутри контейнера
