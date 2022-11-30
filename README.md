@@ -27,30 +27,27 @@ docker run hello-world
 Скачиваем Docker Desktop по ссылке [Mac](https://download.docker.com/mac/stable/Docker.dmg) или [Windows](https://download.docker.com/win/stable/InstallDocker.msi). 
 Запускаем установщик. Следуем инструкциям. Подробнее про установку можно посмотреть по ссылкам [Mac](https://docs.docker.com/docker-for-mac/install/) или [Windows](https://docs.docker.com/docker-for-windows/install/)
 
-# DOCKER RUN
+# Запуск контейнера
 
+## docker run
 ```
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
-```
-[OPTIONS]
--it — интерактивный режим. Перейти в контейнер и запустить внутри контейнера команду
--d — запустить контейнер в фоне (демоном) и вывести его ID
--p port_localhost:port_docker_image — порты из докера на локалхост
--e «TZ=Europe/Moscow» — указываем нашему контейнеру timezone
--h HOSTNAME — присвоить имя хоста контейнеру
-— link <имя контейнера> — связать контейнеры с другим
--v /local/path:/container/path/ — прокидываем в контейнер докера директорию с локальной машины
---name CONTAINERNAME — присвоить имя нашему контейнеру
---restart=[no/on-failure/always/unless-stopped] — варианты перезапуска контейнера при крэше
-```
 
 ## [OPTIONS]
-    -it, -i -t                      интерактивный терминал. Перейти в контейнер и 
-                                    запустить внутри контейнера команду. Команда указывается
-                                    после названия IMAGE, например, SH
-    -d                              запустить контейнер в фоне (демоном) и вывести его ID
-    -p external_port:internal_port  маппинг портов внешний:внутренний
+    -it, -i -t                      Интерактивный терминал. Перейти в контейнер и выполнить
+                                    внутри команду. Команда указывается после названия IMAGE, 
+                                    например, SH - запускает shell внутри контейнера
+    -d                              Запустить контейнер в фоне (демоном)
+    -p external_port:internal_port  Маппинг портов внешний:внутренний
+    --name CONTAINERNAME            Присвоить имя контейнеру
+    -h HOSTNAME                     Присвоить имя хоста контейнеру
+    -v /local/path:/container/path/ Маппинг локальной папки к папке внутри контейнера
+    -e «TZ=Europe/Moscow»           Указываем таймзону внутри контейнера
+    -link <имя контейнера>          Связать контейнер с другим контейнером
+    --restart=[on-failure]          Варианты перезапуска контейнера:
+                                    [no/on-failure/always/unless-stopped]
+    
 
 
 ## Logout from a Registry.
