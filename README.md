@@ -45,6 +45,14 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 --restart=[no/on-failure/always/unless-stopped] — варианты перезапуска контейнера при крэше
 ```
 
+## [OPTIONS]
+    -it, -i -t                      интерактивный терминал. Перейти в контейнер и 
+                                    запустить внутри контейнера команду. Команда указывается
+                                    после названия IMAGE, например, SH
+    -d                              запустить контейнер в фоне (демоном) и вывести его ID
+    -p external_port:internal_port  маппинг портов внешний:внутренний
+
+
 ## Logout from a Registry.
 
 ```
