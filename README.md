@@ -13,7 +13,7 @@
 ```
 sudo curl -sSL get.docker.com | sh
 ```
-Добавляем себя (username) в группу **docker**:
+Добавляем себя [**username**] в группу **docker**:
 ```
 sudo adduser username docker
 ```
@@ -24,16 +24,8 @@ docker run hello-world
 
 ## Mac или Windows
 
-Скачиваем Docker Desktop по ссылке
-**Mac:**
-```
-https://download.docker.com/mac/stable/Docker.dmg
-```
-**Windows:**
-```
-https://download.docker.com/win/stable/InstallDocker.msi
-```
-Подробнее про установку можно посомтреть по ссылкам [Mac](https://docs.docker.com/docker-for-mac/install/) или [Windows](https://docs.docker.com/docker-for-windows/install/)
+Скачиваем Docker Desktop по ссылке [Mac](https://download.docker.com/mac/stable/Docker.dmg) или [Windows](https://download.docker.com/win/stable/InstallDocker.msi). 
+Запускаем установщик. Следуем инструкциям. Подробнее про установку можно посмотреть по ссылкам [Mac](https://docs.docker.com/docker-for-mac/install/) или [Windows](https://docs.docker.com/docker-for-windows/install/)
 
 # DOCKER RUN
 
