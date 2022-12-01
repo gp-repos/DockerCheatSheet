@@ -80,3 +80,7 @@ docker container inspect [CONTAINERNAME or CONTAINERID]
 ```
 docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [CONTAINERNAME or CONTAINERID]
 ```
+или
+```
+docker container inspect [CONTAINERNAME or CONTAINERID] | graspep IPAddress
+```
