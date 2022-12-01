@@ -56,11 +56,11 @@ docker run -d -p 8080:80 nginx
 Скачивает (если нет локально) и запускает (run) образ nginx в фоновом режиме (-d), делает меппинг портов (-p) с порта 8080 локальной машины, на порт 80 внутри контейнера. 
 
 # Работа с контейнерами
-Список запущенных контейнеров:
+**Список запущенных контейнеров:**
 ```
 docker ps
 ```
-### Список всех контейнеров (запущенных и остановленных):
+**Список всех контейнеров (запущенных и остановленных):**
 ```
 docker ps -a
 ```
@@ -72,11 +72,11 @@ docker container prune
 ```
 docker stop [CONTAINERNAME or CONTAINERID]
 ```
-Вывести всю информацию о контейнере:
+**Вывести всю информацию о контейнере:**
 ```
 docker container inspect [CONTAINERNAME or CONTAINERID]
 ```
-Вывести IPAddress, как часть информации о контейнере:
+**Вывести IPAddress, как часть информации о контейнере:**
 ```
 docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [CONTAINERNAME or CONTAINERID]
 ```
@@ -84,13 +84,13 @@ docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [CONTAINERN
 ```
 docker container inspect [CONTAINERNAME or CONTAINERID] | grep IPAddress
 ```
-Подключиться к запущенному контейнеру в интерактивном режиме (-it) и запустить (exec) в нем оболочку bash:
+**Подключиться к запущенному контейнеру в интерактивном режиме (-it) и запустить (exec) в нем оболочку bash:**
 ```
 docker exec -it [CONTAINERNAME or CONTAINERID] bash
 ```
 
 # Работа с имеждами
-Список локальных образов:
+**Список локальных образов:**
 ```
 docker images
 ```
