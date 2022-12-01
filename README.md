@@ -60,21 +60,17 @@ docker run -d -p 8080:80 nginx
 ```
 docker ps
 ```
-Список запущенных и остановленных контейнеров:
+### Список всех контейнеров (запущенных и остановленных):
 ```
 docker ps -a
 ```
-Удалить все остановленные контейнеры:
+### Удалить все остановленные контейнеры:
 ```
 docker container prune
 ```
-или
+Остановить контейнер:
 ```
-docker container rm `docker container ls -a -q`
-```
-Список локальных образов:
-```
-docker images
+docker stop [CONTAINERNAME or CONTAINERID]
 ```
 Вывести всю информацию о контейнере:
 ```
@@ -87,4 +83,14 @@ docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [CONTAINERN
 или
 ```
 docker container inspect [CONTAINERNAME or CONTAINERID] | grep IPAddress
+```
+Подключиться к запущенному контейнеру в интерактивном режиме (-it) и запустить (exec) в нем оболочку bash:
+```
+docker exec -it [CONTAINERNAME or CONTAINERID] bash
+```
+
+# Работа с имеждами
+Список локальных образов:
+```
+docker images
 ```
