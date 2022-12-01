@@ -72,5 +72,11 @@ docker container prune
 ```
 docker images
 ```
-
-
+Вывести всю информацию о контейнере:
+```
+docker container inspect [CONTAINERNAME or CONTAINERID]
+```
+Вывести IPAddress, как часть информации о контейнере:
+```
+docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [CONTAINERNAME or CONTAINERID]
+```
