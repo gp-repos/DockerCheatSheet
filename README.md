@@ -64,11 +64,11 @@ docker ps
 ```
 docker ps -a
 ```
-### Удалить все остановленные контейнеры:
+**Удалить все остановленные контейнеры:**
 ```
 docker container prune
 ```
-Остановить контейнер:
+**Остановить контейнер:**
 ```
 docker stop [CONTAINERNAME or CONTAINERID]
 ```
