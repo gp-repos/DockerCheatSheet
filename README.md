@@ -4,7 +4,7 @@
 
    * [Установка](#установка)
    * [Запуск контейнера](#Запуск-контейнера)
-   * [Работа с имеждами](#Работа-с-имеждами)
+   * [Работа с имиждами](#Работа-с-имиждами)
    
 # Установка
 
@@ -104,7 +104,7 @@ docker container inspect [CONTAINERNAME or CONTAINERID] | grep IPAddress
 docker exec -it [CONTAINERNAME or CONTAINERID] bash
 ```
 
-# Работа с имеждами
+# Работа с имиждами
 **Список локальных образов:**
 ```
 docker images
