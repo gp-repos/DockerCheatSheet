@@ -68,6 +68,10 @@ docker ps -a
 ```
 docker container prune
 ```
+или
+```
+docker container rm `docker container ls -a -q`
+```
 Список локальных образов:
 ```
 docker images
@@ -82,5 +86,5 @@ docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [CONTAINERN
 ```
 или
 ```
-docker container inspect [CONTAINERNAME or CONTAINERID] | graspep IPAddress
+docker container inspect [CONTAINERNAME or CONTAINERID] | grep IPAddress
 ```
