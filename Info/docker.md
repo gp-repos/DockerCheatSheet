@@ -27,7 +27,7 @@ Here is a list of some of the most commonly used Docker commands:
 
 These are just a few examples of the many commands available in Docker. To see a complete list of Docker commands, you can use the **docker** command with the **--help** flag. For example: **docker --help**
 
-## docker run
+## docker run command
 The **docker run** command is used to create and run a new container from a Docker image. It has a number of optional parameters that can be used to customize the behavior of the container.
 
 Here are some examples of optional parameters that can be used with the **docker run** command:
@@ -48,7 +48,7 @@ Here are some examples of optional parameters that can be used with the **docker
 
 **--network**: Connect the container to a Docker network.
 
-### Here are a few examples of the **docker run** command:
+### Examples of the docker run command:
 
 Run an interactive shell in a container based on the **alpine** image:
 
@@ -72,3 +72,32 @@ Run a container based on the **ubuntu** image, connecting it to an existing Dock
     docker run --network mynetwork ubuntu
 
 These are just a few examples of the many different ways that the docker run command can be used. The options and arguments passed to the command will depend on the specific requirements of the container being run.
+
+## docker start command
+The **docker start** command is used to start a stopped container. It does not have any optional parameters, and it only takes one argument: the name or ID of the container to be started.
+
+Here is an example of the docker start command:
+
+    docker start my_container
+
+In this example, the **docker start** command is used to start a container with the name "**my_container**". If the container is successfully started, the command will return without any output. If the container is not found, or if there is an error starting it, an error message will be displayed.
+
+Note that the **docker start** command will only start a stopped container. If the container is already running, the command will have no effect and will return an error message. To stop a running container, you can use the **docker stop** command.
+
+### Examples of the docker start command:
+
+Start a container with the name "my_container":
+
+    docker start my_container
+
+Start a container with the ID "abc123":
+
+    docker start abc123
+
+Start all stopped containers:
+
+    docker start $(docker ps -aq)
+
+In the first example, the **docker start** command is used to start a container with the name "**my_container**". In the second example, it is used to start a container with the ID "**abc123**". In the third example, the docker start command is used in conjunction with the **docker ps** command to start all stopped containers.
+
+
