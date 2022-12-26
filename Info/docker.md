@@ -139,3 +139,93 @@ Stop multiple running containers:
 Stop a running container and wait 15 seconds before killing it:
 
     docker stop --time 15 my-container
+
+## docker ps command
+
+The `docker ps` command is used to list the running containers on a host.
+
+    docker ps [OPTIONS]
+    
+ It has the following options or parameters:
+
+-   `--all`: Show all containers, including stopped ones. By default, `docker ps` only shows running containers.
+-   `-a` or `--size`: Show the sizes of the containers.
+-   `-f` or `--filter`: Filter the output based on the provided conditions. Multiple filters can be used by providing a comma-separated list.
+-   `--format`: Pretty-print the output using a Go template.
+-   `-l` or `--latest`: Show the latest created container. This includes all states (running, stopped, etc.)
+-   `--no-trunc`: Do not truncate the output.
+-   `-n` or `--last`: Show the last `n` created containers. This includes all states.
+-   `--quiet` or `-q`: Only display the numeric IDs of the containers.
+-   `-s` or `--size`: Show the sizes of the containers.
+
+You can use any combination of these options to list the containers in the desired format. For example, `docker ps --all --size` will show all containers with their sizes.
+
+Here are a few examples of using the `docker ps` command:
+
+List all running containers:
+
+    docker ps
+
+List all containers, including stopped ones:
+
+    docker ps --all
+
+Show the sizes of all running containers:
+
+    docker ps --size
+
+Show the last 5 created containers:
+
+    docker ps --last 5
+
+Show the latest created container:
+
+    docker ps --latest
+
+Filter the output to show only the containers with a specific name:
+
+    docker ps --filter "name=my-container"
+
+Filter the output to show only the containers with a specific label:
+
+    docker ps --filter "label=env=production"
+
+Pretty-print the output using a Go template:
+
+    docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"
+
+## docker rm command
+
+The `docker rm` command is used to remove one or more containers.
+
+    docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+It has the following options or parameters:
+
+-   `--force` or `-f`: Force the removal of a running container. This sends a SIGKILL signal to the container, which terminates it.
+-   `--link`: Remove the specified link.
+-   `--volumes` or `-v`: Remove the volumes associated with the container.
+
+To remove a container, you need to provide the container ID or name as an argument to the `docker rm` command. You can remove multiple containers by specifying their IDs or names as a space-separated list.
+
+Here are a few examples of using the `docker rm` command:
+
+Remove a stopped container:
+
+    docker rm my-container
+
+Remove a running container:
+
+    docker rm --force my-container
+
+Remove multiple stopped containers:
+
+    docker rm container1 container2 container3
+
+Remove a container and its associated volumes:
+
+    docker rm --volumes my-container
+
+Remove a link:
+
+    docker rm --link my-link
