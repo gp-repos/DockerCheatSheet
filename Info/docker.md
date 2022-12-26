@@ -14,14 +14,15 @@ Here is a list of some of the most commonly used Docker commands:
 
 1.  `docker run`: Run a container from a Docker image.
 2.  `docker start`: Start a stopped container.
-3.  `docker stop`: Stop a running container.
-4.  `docker pull`: Pull a Docker image from a registry (such as Docker Hub).
-5.  `docker push`: Push a Docker image to a registry.
-6.  `docker build`: Build a Docker image from a Dockerfile.
-7.  `docker exec`: Run a command in a running container.
-8.  `docker logs`: View the logs of a running container.
-9.  `docker ps`: List running containers.
-10.  `docker rm`: Remove one or more stopped containers.
+3.  `docker ps`: List running containers.
+4.  `docker rm`: Remove one or more stopped containers.
+5.  `docker stop`: Stop a running container.
+6.  `docker pull`: Pull a Docker image from a registry (such as Docker Hub).
+7.  `docker push`: Push a Docker image to a registry.
+8.  `docker build`: Build a Docker image from a Dockerfile.
+9.  `docker exec`: Run a command in a running container.
+10.  `docker logs`: View the logs of a running container.
+
 
 These are just a few examples of the many commands available in Docker. To see a complete list of Docker commands, you can use the `docker` command with the `--help` flag. For example: `docker --help`
 
@@ -68,19 +69,20 @@ These are just a few examples of the many different ways that the `docker run` c
 
 ## docker start command
 
-The `docker start` command is used to start a stopped container. It does not have any optional parameters, and it only takes one argument: the name or ID of the container to be started.
+The `docker start` command is used to start one or more stopped containers.
 
-Here is an example of the `docker start` command:
+    docker start [OPTIONS] CONTAINER [CONTAINER...]
+    
+It has the following options or parameters:
 
-    docker start my_container
+-   `--attach`: Attach to the container's standard output and error streams and forward signals.
+-   `--detach-keys`: Override the key sequence for detaching a container.
 
-In this example, the `docker start` command is used to start a container with the name "my_container". If the container is successfully started, the command will return without any output. If the container is not found, or if there is an error starting it, an error message will be displayed.
+To start a container you need to provide the container ID or name as an argument to the `docker start` command.
 
-Note that the `docker start` command will only start a stopped container. If the container is already running, the command will have no effect and will return an error message. To stop a running container, you can use the `docker stop` command.
+Note that the `docker start` command will only start a stopped container. If the container is already running, the command will have no effect and will return an error message.
 
-### Examples of docker start command
-
-Here are a few examples of the `docker start` command:
+Here are a few examples of using the `docker start` command:
 
 Start a container with the name "my_container":
 
@@ -94,23 +96,29 @@ Start all stopped containers:
 
     docker start $(docker ps -aq)
 
-In the first example, the `docker start` command is used to start a container with the name "my_container". In the second example, it is used to start a container with the ID "abc123". In the third example, the `docker start` command is used in conjunction with the `docker ps` command to start all stopped containers.
+Start multiple stopped containers:
+
+    docker start container1 container2 container3
+
+Start a stopped container and attach to its output and error streams:
+
+    docker start --attach my-container
 
 ## docker stop command
 
-The `docker stop` command is used to stop a running container. It does not have any optional parameters, and it only takes one argument: the name or ID of the container to be stopped.
+The `docker stop` command is used to stop one or more running containers.
+    
+    docker stop [OPTIONS] CONTAINER [CONTAINER...]
 
-Here is an example of the `docker stop` command:
+ It has the following options or parameters:
 
-    docker stop my_container
+-   `--time`: The number of seconds to wait for the container to stop before killing it. The default value is 10 seconds.
 
-In this example, the `docker stop` command is used to stop a container with the name "my_container". If the container is successfully stopped, the command will return without any output. If the container is not found, or if there is an error stopping it, an error message will be displayed.
+To stop a running container, you need to provide the container ID or name as an argument to the `docker stop` command.
 
-Note that the `docker stop` command will only stop a running container. If the container is already stopped, the command will have no effect and will return an error message. To start a stopped container, you can use the `docker start` command.
+Note that the `docker stop` command will only stop a running container. If the container is already stopped, the command will have no effect and will return an error message.
 
-### Examples of docker stop command
-
-Here are a few examples of the `docker stop` command:
+Here are a few examples of using the `docker stop` command:
 
 Stop a container with the name "my_container":
 
@@ -124,5 +132,10 @@ Stop all running containers:
 
     docker stop $(docker ps -q)
 
-In the first example, the `docker stop` command is used to stop a container with the name "my_container". In the second example, it is used to stop a container with the ID "abc123". In the third example, the `docker stop` command is used in conjunction with the `docker ps` command to stop all running containers.
+Stop multiple running containers:
 
+    docker stop container1 container2 container3
+
+Stop a running container and wait 15 seconds before killing it:
+
+    docker stop --time 15 my-container
