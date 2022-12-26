@@ -8,38 +8,7 @@ With Docker, you can run multiple applications on the same host without them int
 
 Overall, Docker makes it easier to develop, test, and deploy applications by providing a standardized and isolated environment for them to run in.
 
-## Commonly used Docker commands:
-
-Here is a list of some of the most commonly used Docker commands:
-
-|Command|Description| 
-|:-|:-|
-|**docker run**| Run a container from a Docker image.|
-|**docker start**| Start a stopped container.|
-|**docker stop**| Stop a running container.|
-|**docker pull**| Pull a Docker image from a registry (such as Docker Hub).|
-|**docker push**| Push a Docker image to a registry.|
-|**docker build**| Build a Docker image from a Dockerfile.|
-|**docker exec**| Run a command in a running container.|
-|**docker logs**| View the logs of a running container.|
-|**docker ps**| List running containers.|
-|**docker rm**| Remove one or more stopped containers.|
-
-These are just a few examples of the many commands available in Docker. To see a complete list of Docker commands, you can use the **docker** command with the **--help** flag. For example: **docker --help**
-
-
-
-# what is docker?
-
-Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package.
-
-Using Docker, you can run and manage applications in a standardized, isolated environment on your own computer or in the cloud. This makes it easier to develop and test applications, as well as deploy them to production environments.
-
-With Docker, you can run multiple applications on the same host without them interfering with each other. This is because each container runs in its own isolated environment, with its own system libraries and dependencies. This makes it easy to run applications that might have different system requirements on the same host.
-
-Overall, Docker makes it easier to develop, test, and deploy applications by providing a standardized and isolated environment for them to run in.
-
-## what is most popular docker commands?
+## Commonly used Docker commands
 
 Here is a list of some of the most commonly used Docker commands:
 
@@ -71,8 +40,6 @@ Here are some examples of optional parameters that can be used with the `docker 
 -   `--link`: Add a link to another container.
 -   `--network`: Connect the container to a Docker network.
 
-These are just a few examples of the many options available with the `docker run` command. To see a complete list of options, you can use the `docker run --help` command.
-
 ### Examples of docker run command
 
 Here are a few examples of the `docker run` command:
@@ -99,7 +66,7 @@ Run a container based on the `ubuntu` image, connecting it to an existing Docker
 
 These are just a few examples of the many different ways that the `docker run` command can be used. The options and arguments passed to the command will depend on the specific requirements of the container being run.
 
-## docker start command?
+## docker start command
 
 The `docker start` command is used to start a stopped container. It does not have any optional parameters, and it only takes one argument: the name or ID of the container to be started.
 
@@ -128,8 +95,6 @@ Start all stopped containers:
     docker start $(docker ps -aq)
 
 In the first example, the `docker start` command is used to start a container with the name "my_container". In the second example, it is used to start a container with the ID "abc123". In the third example, the `docker start` command is used in conjunction with the `docker ps` command to start all stopped containers.
-
-Note that the `docker start` command will only start stopped containers. If a container is already running, the command will have no effect and will return an error message. To stop a running container, you can use the `docker stop` command.
 
 ## docker stop command
 
@@ -161,4 +126,3 @@ Stop all running containers:
 
 In the first example, the `docker stop` command is used to stop a container with the name "my_container". In the second example, it is used to stop a container with the ID "abc123". In the third example, the `docker stop` command is used in conjunction with the `docker ps` command to stop all running containers.
 
-Note that the `docker stop` command will only stop running containers. If a container is already stopped, the command will have no effect and will return an error message. To start a stopped container, you can use the `docker start` command.
