@@ -12,15 +12,17 @@ Overall, Docker makes it easier to develop, test, and deploy applications by pro
 
 Here is a list of some of the most commonly used Docker commands:
 
-**docker run:** Run a container from a Docker image.
-**docker start:** Start a stopped container.
-**docker stop:** Stop a running container.
-**docker pull:** Pull a Docker image from a registry (such as Docker Hub).
-**docker push:** Push a Docker image to a registry.
-**docker build:** Build a Docker image from a Dockerfile.
-**docker exec:** Run a command in a running container.
-**docker logs:** View the logs of a running container.
-**docker ps:** List running containers.
-**docker rm:** Remove one or more stopped containers.
+|Command|Description| 
+|:-|:-|
+|**docker run**| Run a container from a Docker image.|
+|**docker start**| Start a stopped container.|
+|**docker stop**| Stop a running container.|
+|**docker pull**| Pull a Docker image from a registry (such as Docker Hub).|
+|**docker push**| Push a Docker image to a registry.|
+|**docker build**| Build a Docker image from a Dockerfile.|
+|**docker exec**| Run a command in a running container.|
+|**docker logs**| View the logs of a running container.|
+|**docker ps**| List running containers.|
+|**docker rm**| Remove one or more stopped containers.|
 
 These are just a few examples of the many commands available in Docker. To see a complete list of Docker commands, you can use the **docker** command with the **--help** flag. For example: **docker --help**
