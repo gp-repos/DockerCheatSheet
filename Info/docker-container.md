@@ -71,7 +71,7 @@ Execute a command in a running container:
 
     docker container exec my-container ls /
     
-### Complete list of optional parameters of `docker container` command:
+### Complete list of subcommands of `docker container` command:
 
 -   `attach`: Attach local standard input, output, and error streams to a running container.
 -   `commit`: Create a new image from a container's changes.
