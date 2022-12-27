@@ -4,8 +4,7 @@ The `docker container` command is used to manage Docker containers.
     
     docker container COMMAND
 
-
-Here are some of the commands that you can use with `docker container`:
+Here are some commonly used optional parameters of `docker container` command:
 
 -   `create`: Create a new container.
 -   `run`: Run a command in a new container.
@@ -18,20 +17,30 @@ Here are some of the commands that you can use with `docker container`:
 -   `rm`: Remove one or more containers.
 -   `inspect`: Display detailed information about a container.
 
-Here are some examples of using the `docker container` command:
+Each subcommand has its own set of options and parameters. You can use the `docker container <subcommand> --help` command to see the options and parameters for a specific subcommand.
 
-Create a new container based on the `nginx` image and run it in the background:
-
-    docker container run -d --name mynginx nginx
+### Here are a some examples of using the `docker container` command:
 
 Start a stopped container:
 
-    docker container start mynginx
+    docker container start my-container
 
 Stop a running container:
 
-    docker container stop mynginx
+    docker container stop my-container
+        
+Create a new container based on the `nginx` image and run it in the background:
 
+    docker container run -d --name mynginx nginx
+    
+Run a command in a new container:
+
+    docker container run -it --name my-container ubuntu bash
+    
+List all containers:
+
+    docker container ls
+    
 Restart a container:
 
     docker container restart mynginx
@@ -50,54 +59,21 @@ Kill a running container:
 
 Remove a container:
 
-    docker container rm mynginx
-
-Display detailed information about a container:
-
-    docker container inspect mynginx
-    
-    
-    
-
-
-Each subcommand has its own set of options and parameters. You can use the `docker container <subcommand> --help` command to see the options and parameters for a specific subcommand.
-
-Here are a few examples of using the `docker container` command:
-
-List all containers:
-
-    docker container ls
-
-Run a command in a new container:
-
-    docker container run -it --name my-container ubuntu bash
-
-Start a stopped container:
-
-    docker container start my-container
-
-Stop a running container:
-
-    docker container stop my-container
-
-Remove a container:
-
     docker container rm my-container
-
-Fetch the logs of a container:
-
-    docker container logs my-container
 
 Display detailed information about a container:
 
     docker container inspect my-container
+    
+Fetch the logs of a container:
+
+    docker container logs my-container
 
 Execute a command in a running container:
 
     docker container exec my-container ls /
     
-
-It has the following options or parameters:
+### Complete list of optional parameters of `docker container` command:
 
 -   `attach`: Attach local standard input, output, and error streams to a running container.
 -   `commit`: Create a new image from a container's changes.
