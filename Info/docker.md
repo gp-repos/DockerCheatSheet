@@ -14,15 +14,16 @@ Here is a list of some of the most commonly used Docker commands:
 
 1.  `docker run`: Run a container from a Docker image.
 2.  `docker start`: Start a stopped container.
-3.  `docker ps`: List running containers.
-4.  `docker rm`: Remove one or more stopped containers.
-5.  `docker stop`: Stop a running container.
-6.  `docker pull`: Pull a Docker image from a registry (such as Docker Hub).
-7.  `docker push`: Push a Docker image to a registry.
-8.  `docker build`: Build a Docker image from a Dockerfile.
-9.  `docker exec`: Run a command in a running container.
-10.  `docker logs`: View the logs of a running container.
-
+3.  `docker stop`: Stop a running container.
+4.  `docker ps`: List running containers.
+5.  `docker rm`: Remove one or more stopped containers.
+6.  `docker image`: Manage Docker images.
+7.  `docker container`: Manage Docker containers.
+8.  `docker exec`: Run a command in a running container.
+9.  `docker build`: Build a Docker image from a Dockerfile.
+10. `docker logs`: View the logs of a running container.
+11. `docker pull`: Pull a Docker image from a registry (such as Docker Hub).
+12. `docker push`: Push a Docker image to a registry.
 
 These are just a few examples of the many commands available in Docker. To see a complete list of Docker commands, you can use the `docker` command with the `--help` flag. For example: `docker --help`
 
@@ -229,3 +230,310 @@ Remove a container and its associated volumes:
 Remove a link:
 
     docker rm --link my-link
+    
+## docker image command
+
+The `docker image` command is used to manage Docker images. It has the following options or parameters:
+
+    docker image COMMAND
+
+It has the following options or parameters:
+
+-   `build`: Build an image from a Dockerfile.
+-   `history`: Show the history of an image.
+-   `import`: Import the contents from a tarball to create a filesystem image.
+-   `inspect`: Display detailed information on one or more images.
+-   `load`: Load an image from a tar archive or standard input.
+-   `ls`: List images.
+-   `prune`: Remove unused images.
+-   `pull`: Pull an image or a repository from a registry.
+-   `push`: Push an image or a repository to a registry.
+-   `rm`: Remove one or more images.
+-   `save`: Save one or more images to a tar archive.
+-   `tag`: Create a tag that refers to an image.
+
+Each subcommand has its own set of options and parameters. You can use the `docker image <subcommand> --help` command to see the options and parameters for a specific subcommand.
+
+Here are a few examples of using the `docker image` command:
+
+List all images:
+
+    docker image ls
+
+Pull an image from a registry:
+
+    docker image pull ubuntu
+
+Build an image from a Dockerfile:
+
+    docker image build -t my-image .
+
+Display detailed information about an image:
+
+    docker image inspect my-image
+
+Save an image to a tar archive:
+
+    docker image save my-image > my-image.tar
+
+Load an image from a tar archive:
+
+    docker image load < my-image.tar
+
+Remove an image:
+
+    docker image rm my-image
+
+## docker container command
+
+The `docker container` command is used to manage Docker containers.
+    
+    docker container COMMAND
+
+It has the following options or parameters:
+
+-   `attach`: Attach local standard input, output, and error streams to a running container.
+-   `commit`: Create a new image from a container's changes.
+-   `cp`: Copy files or directories between a container and the local filesystem.
+-   `create`: Create a new container.
+-   `exec`: Run a command in a running container.
+-   `export`: Export a container's filesystem as a tar archive.
+-   `inspect`: Display detailed information on one or more containers.
+-   `kill`: Kill one or more running containers.
+-   `logs`: Fetch the logs of a container.
+-   `ls`: List containers.
+-   `pause`: Pause all processes within one or more containers.
+-   `port`: List port mappings or a specific mapping for the container.
+-   `prune`: Remove all stopped containers.
+-   `rename`: Rename a container.
+-   `restart`: Restart one or more containers.
+-   `rm`: Remove one or more containers.
+-   `run`: Run a command in a new container.
+-   `start`: Start one or more stopped containers.
+-   `stats`: Display a live stream of container(s) resource usage statistics.
+-   `stop`: Stop one or more running containers.
+-   `top`: Display the running processes of a container.
+-   `unpause`: Unpause all processes within one or more containers.
+-   `update`: Update configuration of one or more containers.
+-   `wait`: Block until one or more containers stop, then print their exit codes.
+
+Each subcommand has its own set of options and parameters. You can use the `docker container <subcommand> --help` command to see the options and parameters for a specific subcommand.
+
+Here are a few examples of using the `docker container` command:
+
+List all containers:
+
+    docker container ls
+
+Run a command in a new container:
+
+    docker container run -it --name my-container ubuntu bash
+
+Start a stopped container:
+
+    docker container start my-container
+
+Stop a running container:
+
+    docker container stop my-container
+
+Remove a container:
+
+    docker container rm my-container
+
+Fetch the logs of a container:
+
+    docker container logs my-container
+
+Display detailed information about a container:
+
+    docker container inspect my-container
+
+Execute a command in a running container:
+
+    docker container exec my-container ls /
+
+## docker exec command
+
+The `docker exec` command is used to run a command in a running container. 
+
+    docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+It has the following options or parameters:
+
+-   `--detach` or `-d`: Run the command in the background.
+-   `--detach-keys`: Override the key sequence for detaching a container.
+-   `--env`: Set environment variables.
+-   `--interactive` or `-i`: Keep the standard input open even if not attached.
+-   `--privileged`: Give extended privileges to the command.
+-   `--tty` or `-t`: Allocate a pseudo-TTY.
+-   `--user`: Set the username or UID for the command.
+-   `--workdir`: Set the working directory inside the container.
+
+To run a command in a container, you need to provide the container ID or name as the first argument, followed by the command and its arguments.
+
+Here are a few examples of using the `docker exec` command:
+
+Execute a command in a running container:
+
+    docker exec my-container ls /
+
+Run a command in a running container and keep the standard input open:
+
+    docker exec -i my-container bash
+
+Run a command in a running container with extended privileges:
+
+    docker exec --privileged my-container apt update
+
+Run a command in a running container as a specific user:
+
+    docker exec --user 1000:1000 my-container ls /home
+
+Set an environment variable and run a command in a running container:
+
+    docker exec --env FOO=bar my-container env
+
+## docker build command
+
+The `docker build` command is used to build an image from a Dockerfile.
+
+    docker build [OPTIONS] PATH | URL | -
+
+It has the following options or parameters:
+
+
+Here are a few examples of using the `docker build` command:
+
+Build an image from a Dockerfile in the current directory:
+
+    docker build .
+
+Build an image from a Dockerfile in a specific directory:
+
+    docker build /path/to/my-app
+
+Build an image from a Dockerfile hosted on a remote server:
+
+    docker build https://example.com/my-app.git
+
+Build an image from a Dockerfile and specify a custom image name and tag:
+
+    docker build -t my-image:latest .
+
+Build an image from a Dockerfile and specify build arguments:
+
+    docker build --build-arg arg1=value1 --build-arg arg2=value2 .
+
+Build an image from a Dockerfile and specify a target stage to build:
+
+    docker build --target my-stage .
+
+Build an image from a Dockerfile and use specific images as cache sources:
+
+    docker build --cache-from image1:tag1 --cache-from image2:tag2 .
+
+Build an image from a Dockerfile and suppress the build output:
+
+    docker build -q .
+
+## docker logs command
+
+The `docker logs` command is used to fetch the logs of a container. 
+
+    docker logs [OPTIONS] CONTAINER
+
+It has the following options or parameters:
+
+-   `--details`: Show extra details provided to logs.
+-   `--follow` or `-f`: Follow log output.
+-   `--since`: Show logs since a specific timestamp or relative time.
+-   `--tail`: Show a specific number of lines from the end of the logs.
+-   `--timestamps` or `-t`: Show timestamps.
+
+To fetch the logs of a container, you need to provide the container ID or name as an argument to the `docker logs` command.
+
+Here are a few examples of using the `docker logs` command:
+
+Fetch the logs of a container:
+
+    docker logs my-container
+
+Follow the log output of a container:
+
+    docker logs -f my-container
+
+Show logs since a specific timestamp:
+
+    docker logs --since "2022-01-01T12:00:00" my-container
+
+Show logs since a relative time:
+
+    docker logs --since "1h" my-container
+
+Show a specific number of lines from the end of the logs:
+
+    docker logs --tail 100 my-container
+
+Show timestamps in the logs:
+
+    docker logs -t my-container
+
+## docker pull command
+
+The `docker pull` command is used to pull an image or a repository from a registry.
+
+    docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+
+It has the following options or parameters:
+
+-   `--all-tags` or `-a`: Download all tagged images in the repository.
+-   `--disable-content-trust`: Skip image signing.
+-   `--platform`: Set the platform if the registry is multi-platform capable.
+
+To pull an image or a repository from a registry, you need to provide the name and optionally the tag or digest of the image as an argument to the `docker pull` command. The name of the image is usually in the form `registry/namespace/repository`.
+
+Here are a few examples of using the `docker pull` command:
+
+Pull an image from a registry:
+
+    docker pull ubuntu:20.04
+
+Pull all tagged images in a repository:
+
+    docker pull -a my-image
+
+Pull an image from a private registry:
+
+    docker pull registry.example.com/my-image:latest
+
+Pull an image from a specific platform:
+
+    docker pull --platform linux/arm64 my-image:latest
+
+## docker push command
+
+The `docker push` command is used to push an image or a repository to a registry.
+
+    docker push [OPTIONS] NAME[:TAG]
+
+It has the following options or parameters:
+
+-   `--disable-content-trust`: Skip image signing.
+
+To push an image or a repository to a registry, you need to provide the name and optionally the tag of the image as an argument to the `docker push` command. The name of the image is usually in the form `registry/namespace/repository`.
+
+Here are a few examples of using the `docker push` command:
+
+Push an image to a registry:
+
+    docker push my-image:latest
+
+Push an image to a private registry:
+
+    docker push registry.example.com/my-image:latest
+
+Push an image with a specific tag:
+
+    docker push my-image:1.0.0
+
