@@ -372,27 +372,31 @@ It has the following options or parameters:
 
 To run a command in a container, you need to provide the container ID or name as the first argument, followed by the command and its arguments.
 
-Here are a few examples of using the `docker exec` command:
+### Here are a some examples of using the `docker exec` command:
 
 Execute a command in a running container:
 
-    docker exec my-container ls /
+    docker exec my-container ls -l
 
-Run a command in a running container and keep the standard input open:
+Run a command in a running container and allocate a pseudo-TTY:
 
-    docker exec -i my-container bash
+    docker exec -it my-container bash
 
 Run a command in a running container with extended privileges:
 
     docker exec --privileged my-container apt update
 
-Run a command in a running container as a specific user:
+Run a command in a running container and specify the user to run the command as:
 
-    docker exec --user 1000:1000 my-container ls /home
+    docker exec -u root my-container ls -l
+
+Run a command in a running container and specify the working directory for the command:
+
+    docker exec -w /var/www/html my-container ls -l
 
 Set an environment variable and run a command in a running container:
 
-    docker exec --env FOO=bar my-container env
+    docker exec -e VARNAME=value my-container env
 
 ## docker build command
 
