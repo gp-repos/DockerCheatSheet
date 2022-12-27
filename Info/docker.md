@@ -308,14 +308,6 @@ Each subcommand has its own set of options and parameters. You can use the `dock
 You can get more information about `docker container` command [here](https://github.com/gp-repos/DockerCheatSheet/blob/main/Info/docker-container.md).
 
 ### Here are a some examples of using the `docker container` command:
-
-Start a stopped container:
-
-    docker container start my-container
-
-Stop a running container:
-
-    docker container stop my-container
         
 Create a new container based on the `nginx` image and run it in the background:
 
@@ -324,14 +316,14 @@ Create a new container based on the `nginx` image and run it in the background:
 Run a command in a new container:
 
     docker container run -it --name my-container ubuntu bash
-    
-List all containers:
-
-    docker container ls
-    
+        
 Remove all stopped containers:
 
     docker container prune
+
+List all containers:
+
+    docker container ls
 
 Kill a running container:
 
@@ -344,10 +336,6 @@ Display detailed information about a container:
 Fetch the logs of a container:
 
     docker container logs my-container
-
-Execute a command in a running container:
-
-    docker container exec my-container ls /
 
 You can get more examples of using `docker container` command [here](https://github.com/gp-repos/DockerCheatSheet/blob/main/Info/docker-container.md).
 
