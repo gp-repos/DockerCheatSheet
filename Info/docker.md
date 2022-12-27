@@ -42,9 +42,7 @@ Here are some optional parameters that can be used with the `docker run` command
 -   `--link`: Add a link to another container.
 -   `--network`: Connect the container to a Docker network.
 
-### Examples of docker run command
-
-Here are a few examples of the `docker run` command:
+### Here are a some examples of using the `docker run` command:
 
 Run an interactive shell in a container based on the `alpine` image:
 
@@ -83,7 +81,7 @@ To start a container you need to provide the container ID or name as an argument
 
 Note that the `docker start` command will only start a stopped container. If the container is already running, the command will have no effect and will return an error message.
 
-Here are a few examples of using the `docker start` command:
+### Here are a some examples of using the `docker start` command:
 
 Start a container with the name "my_container":
 
@@ -119,7 +117,7 @@ To stop a running container, you need to provide the container ID or name as an 
 
 Note that the `docker stop` command will only stop a running container. If the container is already stopped, the command will have no effect and will return an error message.
 
-Here are a few examples of using the `docker stop` command:
+### Here are a some examples of using the `docker stop` command:
 
 Stop a container with the name "my_container":
 
@@ -161,7 +159,7 @@ The `docker ps` command is used to list the running containers on a host.
 
 You can use any combination of these options to list the containers in the desired format. For example, `docker ps --all --size` will show all containers with their sizes.
 
-Here are a few examples of using the `docker ps` command:
+### Here are a some examples of using the `docker ps` command:
 
 List all running containers:
 
@@ -209,7 +207,7 @@ It has the following options or parameters:
 
 To remove a container, you need to provide the container ID or name as an argument to the `docker rm` command. You can remove multiple containers by specifying their IDs or names as a space-separated list.
 
-Here are a few examples of using the `docker rm` command:
+### Here are a some examples of using the `docker rm` command:
 
 Remove a stopped container:
 
@@ -230,59 +228,6 @@ Remove a container and its associated volumes:
 Remove a link:
 
     docker rm --link my-link
-    
-## docker image command
-
-The `docker image` command is used to manage Docker images.
-
-    docker image COMMAND
-
-It has the following options or parameters:
-
--   `build`: Build an image from a Dockerfile.
--   `history`: Show the history of an image.
--   `import`: Import the contents from a tarball to create a filesystem image.
--   `inspect`: Display detailed information on one or more images.
--   `load`: Load an image from a tar archive or standard input.
--   `ls`: List images.
--   `prune`: Remove unused images.
--   `pull`: Pull an image or a repository from a registry.
--   `push`: Push an image or a repository to a registry.
--   `rm`: Remove one or more images.
--   `save`: Save one or more images to a tar archive.
--   `tag`: Create a tag that refers to an image.
-
-Each subcommand has its own set of options and parameters. You can use the `docker image <subcommand> --help` command to see the options and parameters for a specific subcommand.
-
-### Here are a few examples of using the `docker image` command:
-
-List all images:
-
-    docker image ls
-
-Pull an image from a registry:
-
-    docker image pull ubuntu
-
-Build an image from a Dockerfile:
-
-    docker image build -t my-image .
-
-Display detailed information about an image:
-
-    docker image inspect my-image
-
-Save an image to a tar archive:
-
-    docker image save my-image > my-image.tar
-
-Load an image from a tar archive:
-
-    docker image load < my-image.tar
-
-Remove an image:
-
-    docker image rm my-image
 
 ## docker container command
 
@@ -338,6 +283,67 @@ Fetch the logs of a container:
     docker container logs my-container
 
 You can get more examples of using `docker container` command [here](https://github.com/gp-repos/DockerCheatSheet/blob/main/Info/docker-container.md).
+
+## docker image command
+
+The `docker image` command is used to manage Docker images.
+
+    docker image COMMAND
+
+It has the following options or parameters:
+
+-   `build`: Build an image from a Dockerfile.
+-   `history`: Show the history of an image.
+-   `import`: Import the contents from a tarball to create a filesystem image.
+-   `inspect`: Display detailed information on one or more images.
+-   `load`: Load an image from a tar archive or standard input.
+-   `ls`: List images.
+-   `prune`: Remove unused images.
+-   `pull`: Pull an image or a repository from a registry.
+-   `push`: Push an image or a repository to a registry.
+-   `rm`: Remove one or more images.
+-   `save`: Save one or more images to a tar archive.
+-   `tag`: Create a tag that refers to an image.
+
+Each subcommand has its own set of options and parameters. You can use the `docker image <subcommand> --help` command to see the options and parameters for a specific subcommand.
+
+You can get more information about `docker image` command [here](https://github.com/gp-repos/DockerCheatSheet/blob/main/Info/docker-image.md).
+
+### Here are a some examples of using the `docker image` command:
+
+List all images:
+
+    docker image ls
+    
+Remove unused images:
+
+    docker image prune
+
+Pull an image from a registry:
+
+    docker image pull ubuntu
+
+Build an image from a Dockerfile:
+
+    docker image build -t my-image .
+
+Display detailed information about an image:
+
+    docker image inspect my-image
+
+Save an image to a tar archive:
+
+    docker image save my-image > my-image.tar
+
+Load an image from a tar archive:
+
+    docker image load < my-image.tar
+
+Remove an image:
+
+    docker image rm my-image
+
+You can get more examples of using `docker image` command [here](https://github.com/gp-repos/DockerCheatSheet/blob/main/Info/docker-image.md).
 
 ## docker exec command
 
