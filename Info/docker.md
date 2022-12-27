@@ -522,7 +522,7 @@ It has the following options or parameters:
 
 To pull an image or a repository from a registry, you need to provide the name and optionally the tag or digest of the image as an argument to the `docker pull` command. The name of the image is usually in the form `registry/namespace/repository`.
 
-Here are a few examples of using the `docker pull` command:
+### Here are a few examples of using the `docker pull` command:
 
 Pull an image from a registry:
 
@@ -552,7 +552,7 @@ It has the following options or parameters:
 
 To push an image or a repository to a registry, you need to provide the name and optionally the tag of the image as an argument to the `docker push` command. The name of the image is usually in the form `registry/namespace/repository`.
 
-Here are a few examples of using the `docker push` command:
+### Here are a few examples of using the `docker push` command:
 
 Push an image to a registry:
 
