@@ -17,8 +17,6 @@ Here are some commonly used optional parameters of `docker container` command:
 -   `rm`: Remove one or more containers.
 -   `inspect`: Display detailed information about a container.
 
-Each subcommand has its own set of options and parameters. You can use the `docker container <subcommand> --help` command to see the options and parameters for a specific subcommand.
-
 ### Here are a some examples of using the `docker container` command:
 
 Start a stopped container:
@@ -98,4 +96,6 @@ Execute a command in a running container:
 -   `top`: Display the running processes of a container.
 -   `unpause`: Unpause all processes within one or more containers.
 -   `update`: Update configuration of one or more containers.
--   `wait`: Block until one or more containers stop, then print their exit codes.   
+-   `wait`: Block until one or more containers stop, then print their exit codes.
+
+Each subcommand has its own set of options and parameters. You can use the `docker container <subcommand> --help` command to see the options and parameters for a specific subcommand.
