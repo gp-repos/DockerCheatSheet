@@ -18,14 +18,18 @@ Here are some optional parameters that can be used with the `docker run` command
 ### Here are a some examples of using the `docker run` command:
 
     docker run -d -p 8080:80 nginx
-    
-This command will run the `nginx` image in a new container in detached mode (i.e., running in the background) and publish the container's port 80 to the host's port 8080.
 
-In detail, the `-d` flag specifies that the container should run in detached mode, i.e., in the background. The `-p 8080:80` flag maps the container's port 80 to the host's port 8080. This means that any traffic that is sent to the host's port 8080 will be forwarded to the container's port 80. Finally, the nginx image specifies the image that should be used to create the container.
+This  command will run the `nginx` image in a new container in detached mode (i.e., running in the background) and publish the container's port 80 to the host's port 8080.
 
-This command will start an nginx web server in a new container and make it accessible on the host machine at http://localhost:8080.
+In detail, the `-d` flag specifies that the container should run in detached mode, i.e., in the background. The `-p 8080:80` flag maps the container's port 80 to the host's port 8080. This means that any traffic that is sent to the host's port 8080 will be forwarded to the container's port 80. Finally, the `nginx` image specifies the image that should be used to create the container.
 
-Note that the nginx image must be available locally or pullable from a registry, such as Docker Hub, in order for this command to work.
+This command will start an `nginx` web server in a new container and make it accessible on the host machine at `http://localhost:8080`.
+
+    docker run -v ${PWD}:/usr/share/nginx/html nginx
+
+This  command command will run
+the `nginx` image in a new container and mount the current working directory (`${PWD}`) as a volume at the `/usr/share/nginx/html` path in the container. In detail, the `-v ${PWD}:/usr/share/nginx/html` flag specifies a volume mount. The `${PWD}` variable refers to the current working directory on the host machine, and the `/usr/share/nginx/html` part specifies the path in the container where the volume should be mounted. Finally, the `nginx` image specifies the image that should be used to create the container.
+
 
 Run an interactive shell in a container based on the `alpine` image:
 
