@@ -233,7 +233,7 @@ Remove a link:
     
 ## docker image command
 
-The `docker image` command is used to manage Docker images. It has the following options or parameters:
+The `docker image` command is used to manage Docker images.
 
     docker image COMMAND
 
@@ -254,7 +254,7 @@ It has the following options or parameters:
 
 Each subcommand has its own set of options and parameters. You can use the `docker image <subcommand> --help` command to see the options and parameters for a specific subcommand.
 
-Here are a few examples of using the `docker image` command:
+### Here are a few examples of using the `docker image` command:
 
 List all images:
 
