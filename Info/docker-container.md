@@ -39,6 +39,10 @@ List all containers:
 
     docker container ls
     
+Remove all stopped containers:
+
+    docker container prune
+    
 Restart a container:
 
     docker container restart mynginx
