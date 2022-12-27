@@ -4,7 +4,7 @@ The `docker build` command is used to build an image from a Dockerfile.
    
     docker build [OPTIONS] PATH | URL | -
 
-Here are some of the options that you can use with `docker build`:
+Here are some commonly used optional parameters of `docker run` command:
 
 -   `-t, --tag`: Add a custom tag to the image in the `name:tag` format.
 -   `--file`: Specify the path to the Dockerfile. If not specified, the default is `./Dockerfile`.
@@ -16,7 +16,7 @@ Here are some of the options that you can use with `docker build`:
 
 You can also specify the path to the directory containing the Dockerfile as the `PATH` argument, or you can specify a URL to a Git repository as the `URL` argument.
 
-### Here are a few examples of using the `docker build` command:
+### Here are a some examples of using the `docker build` command:
 
 Build an image from a Dockerfile in the current directory:
 
