@@ -18,35 +18,55 @@ It has the following options or parameters:
 -   `rm`: Remove one or more images.
 -   `save`: Save one or more images to a tar archive.
 -   `tag`: Create a tag that refers to an image.
+    
+Each subcommand has its own set of options and parameters. You can use the `docker image <subcommand> --help` command to see the options and parameters for a specific subcommand.
 
 ### Here are a some examples of using the `docker image` command:
 
-List all images:
+List images:
 
     docker image ls
+
+Remove unused images:
+
+    docker image prune
 
 Pull an image from a registry:
 
     docker image pull ubuntu
 
-Build an image from a Dockerfile:
+Push an image to a registry:
 
-    docker image build -t my-image .
-
-Display detailed information about an image:
-
-    docker image inspect my-image
-
-Save an image to a tar archive:
-
-    docker image save my-image > my-image.tar
-
-Load an image from a tar archive:
-
-    docker image load < my-image.tar
+    docker image push myimage
 
 Remove an image:
 
-    docker image rm my-image
-    
-Each subcommand has its own set of options and parameters. You can use the `docker image <subcommand> --help` command to see the options and parameters for a specific subcommand.
+    docker image rm myimage
+
+Save an image to a tar archive:
+
+    docker image save -o myimage.tar myimage
+
+Tag an image:
+
+    docker image tag myimage myimage:latest
+
+Build an image from a Dockerfile located in the current directory and tag it as `myimage`:
+
+    docker image build -t myimage .
+
+Show the history of an image:
+
+    docker image history myimage
+
+Import an image from a tar archive:
+
+    docker image import myimage.tar
+
+Display detailed information about an image:
+
+    docker image inspect myimage
+
+Load an image from a tar archive:
+
+    docker image load -i myimage.tar
